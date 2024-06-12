@@ -4853,9 +4853,8 @@ function run() {
             testFiles.forEach(function (file) {
                 core.debug(`${file}`);
             });
-            core.info(`Downloading test tools...`);
+            core.info(`Setting test tools...`);
             let workerZipPath = path.join(__dirname, 'win-x64.zip');
-            yield exec.exec(`powershell Invoke-WebRequest -Uri "https://aka.ms/local-worker-win-x64" -OutFile ${workerZipPath}`);
             core.info(`Unzipping test tools...`);
             core.debug(`workerZipPath is ${workerZipPath}`);
             yield exec.exec(`powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}`);
