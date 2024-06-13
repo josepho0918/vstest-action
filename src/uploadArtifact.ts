@@ -69,7 +69,7 @@ export async function uploadArtifact() {
         )
       }
     }
-  } catch (err) {
+  } catch (err: any) {
     core.setFailed(err.message)
   }
 }

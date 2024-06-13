@@ -41,6 +41,10 @@ describe('vstest Action Unit Tests', ()=>{
     afterEach(async () => {
         jest.resetAllMocks
     })
+
+    afterAll(async () => {
+        process.exitCode = 0
+    })
     
     it("test getArguments with no inputs", async () => {
 
@@ -274,7 +278,7 @@ describe('vstest Action Unit Tests', ()=>{
             omitBrokenSymbolicLinks: false
         }
 
-        var globCreationResultMock = when(globCreateMock).calledWith(searchFolder,globOptions).mockReturnThis
+        // var globCreationResultMock = when(globCreateMock).calledWith(searchFolder,globOptions).mockReturnThis
         // var y = when(globCreationResultMock).calledWith().mockReturnValue(rawSearchResults)
 
         // Act

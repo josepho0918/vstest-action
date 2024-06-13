@@ -33,14 +33,14 @@ export async function run() {
 
     core.info(`Running tests...`);
     await exec.exec(`${vsTestPath} ${testFiles.join(' ')} ${args} /Logger:TRX`);
-  } catch (err) {
+  } catch (err: any) {
     core.setFailed(err.message)
   }
 
   // Always attempt to upload test result artifact
   try {
     await uploadArtifact();
-  } catch (err) {
+  } catch (err: any) {
     core.setFailed(err.message)
   }
 }
