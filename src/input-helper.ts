@@ -13,7 +13,7 @@ export function getInputs(): UploadInputs {
   const noFileBehavior: NoFileOptions = NoFileOptions[ifNoFilesFound as keyof typeof NoFileOptions]
 
   if (!noFileBehavior) {
-    core.setFailed(
+    core.error(
       `Unrecognized ${
         Inputs.IfNoFilesFound
       } input. Provided: ${ifNoFilesFound}. Available options: ${Object.keys(
@@ -32,7 +32,7 @@ export function getInputs(): UploadInputs {
   if (retentionDaysStr) {
     inputs.retentionDays = parseInt(retentionDaysStr)
     if (isNaN(inputs.retentionDays)) {
-      core.setFailed('Invalid retention-days')
+      core.error('Invalid retention-days')
     }
   }
 

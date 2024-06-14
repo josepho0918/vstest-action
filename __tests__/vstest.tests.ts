@@ -37,10 +37,6 @@ describe('vstest Action Unit Tests', ()=>{
     afterEach(async () => {
         jest.resetAllMocks
     })
-
-    afterAll(async () => {
-        process.exitCode = 0
-    })
     
     it("test getArguments with no inputs", async () => {
 

@@ -29,10 +29,6 @@ describe('vstest Action Unit Tests', ()=>{
       jest.resetAllMocks()
   })
 
-  afterAll(async () => {
-      process.exitCode = 0
-  })
-
   it('test filesToUpload with valid filenames', async () => {
       // Arrange
       const expectFiles:string[] = [

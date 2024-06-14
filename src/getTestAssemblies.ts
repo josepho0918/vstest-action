@@ -11,7 +11,7 @@ export async function getTestAssemblies(): Promise<string[]> {
     
     return searchResult.filesToUpload
   } catch (err: any) {
-    core.setFailed(err.message)
+    core.error(err.message)
   }
   return []
 }

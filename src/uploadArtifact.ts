@@ -60,6 +60,6 @@ export async function uploadArtifact() {
       core.info(`Created artifact with id: ${id} (bytes: ${size}`)
     }
   } catch (err: any) {
-    core.setFailed(err.message)
+    core.error(err.message)
   }
 }
