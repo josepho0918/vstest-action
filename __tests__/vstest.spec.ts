@@ -1,21 +1,11 @@
-import {create, UploadOptions,UploadResponse} from '@actions/artifact'
 import * as glob from '@actions/glob'
 import * as core from '@actions/core'
-import * as exec from '@actions/exec'
 import * as path from 'path'
 import * as Search from '../src/search'
-import {getInputs} from '../src/input-helper'
 import {Inputs, NoFileOptions} from '../src/constants'
-import { run } from '../src/index'
 import {uploadArtifact} from '../src/uploadArtifact'
-import {getTestAssemblies} from '../src/getTestAssemblies'
-import {getArguments} from '../src/getArguments'
-import {getVsTestPath} from '../src/getVsTestPath'
 import {when} from 'jest-when'
 import mock from 'mock-fs'
-import * as fs from 'fs'
-import { stringify } from 'querystring'
-import { DirectoryItem } from 'mock-fs/lib/filesystem'
 
 describe('vstest Action Unit Tests', ()=>{
 
