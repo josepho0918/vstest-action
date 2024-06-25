@@ -33,7 +33,7 @@
     "jest-when": "^3.6.0",
     "mock-fs": "^5.2.0",
     "ts-loader": "^9.5.1",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "wget-improved": "^3.4.0"
   }
 }
