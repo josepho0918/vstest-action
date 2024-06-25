@@ -88,7 +88,7 @@ importers:
         specifier: ^9.5.1
         version: 9.5.1(typescript@5.5.2)(webpack@5.92.1)
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.5.2
         version: 5.5.2
       wget-improved:
         specifier: ^3.4.0
