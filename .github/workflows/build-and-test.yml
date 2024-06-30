@@ -24,17 +24,12 @@ jobs:
       - name: Checkout from PR branch
         uses:  actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Installing node_modules
-        run: pnpm install
+        run: npm install
         
       - name: Build GitHub Acton
-        run: pnpm run build
+        run: npm run build
         
       - name: Run Unit and Functional Tests
-        run: pnpm run test
+        run: npm run test
 
