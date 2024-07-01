@@ -3,5 +3,6 @@
   "extends": [
     "config:recommended"
   ],
-  "forkProcessing": "enabled"
+  "forkProcessing": "enabled",
+  "rangeStrategy": "bump"
 }
