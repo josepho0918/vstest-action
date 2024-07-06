@@ -1,8 +1,3 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "forkProcessing": "enabled",
-  "rangeStrategy": "bump"
+  "extends": ["github>josepho0918/renovate-config"]
 }
