@@ -2,42 +2,42 @@ import * as core from '@actions/core';
 
 export function getArguments(): string {
   let args = ''
-  let testFiltercriteria = core.getInput('testFiltercriteria')
+  const testFiltercriteria = core.getInput('testFiltercriteria')
   if(testFiltercriteria) {
     args += `/TestCaseFilter:${testFiltercriteria} `
   }
 
-  let runSettingsFile = core.getInput('runSettingsFile')
+  const runSettingsFile = core.getInput('runSettingsFile')
   if(runSettingsFile) {
     args += `/Settings:${runSettingsFile} `
   }
 
-  let pathToCustomTestAdapters = core.getInput('pathToCustomTestAdapters')
+  const pathToCustomTestAdapters = core.getInput('pathToCustomTestAdapters')
   if(pathToCustomTestAdapters) {
     args += `/TestAdapterPath:${pathToCustomTestAdapters} `
   }
 
-  let runInParallel = core.getInput('runInParallel')
+  const runInParallel = core.getInput('runInParallel')
   if(runInParallel && runInParallel.toUpperCase() === "TRUE") {
     args += `/Parallel `
   }
 
-  let runTestsInIsolation = core.getInput('runTestsInIsolation')
+  const runTestsInIsolation = core.getInput('runTestsInIsolation')
   if(runTestsInIsolation && runTestsInIsolation.toUpperCase() === "TRUE") {
     args += `/InIsolation `
   }
 
-  let codeCoverageEnabled = core.getInput('codeCoverageEnabled')
+  const codeCoverageEnabled = core.getInput('codeCoverageEnabled')
   if(codeCoverageEnabled && codeCoverageEnabled.toUpperCase() === "TRUE") {
     args += `/EnableCodeCoverage `
   }
 
-  let platform = core.getInput('platform')
+  const platform = core.getInput('platform')
   if(platform && (platform === "x86" || platform === "x64" || platform === "ARM")) {
     args += `/Platform:${platform} `
   }
 
-  let otherConsoleOptions = core.getInput('otherConsoleOptions')
+  const otherConsoleOptions = core.getInput('otherConsoleOptions')
   if(otherConsoleOptions) {
     args += `${otherConsoleOptions} `
   }

@@ -31,7 +31,7 @@ if (!fs.existsSync(tempPath)) {
   io.mkdirP(tempPath)
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+ 
 function setVar(name, value) {
   process.env[`INPUT_${name.replace(/ /g, '_').toUpperCase()}`] = value
 }

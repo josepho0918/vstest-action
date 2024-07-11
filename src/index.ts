@@ -8,7 +8,7 @@ import {getVsTestPath} from './getVsTestPath'
 
 export async function run() {
   try {
-    let testFiles = await getTestAssemblies();
+    const testFiles = await getTestAssemblies();
     if(testFiles.length == 0) {
       throw new Error('No matched test files!')
     }
@@ -19,29 +19,29 @@ export async function run() {
     });
 
     core.info(`Setting test tools...`);
-    let workerZipPath = path.join(__dirname, 'win-x64.zip')
+    const workerZipPath = path.join(__dirname, 'win-x64.zip')
 
     core.info(`Unzipping test tools...`);
     core.debug(`workerZipPath is ${workerZipPath}`);
     await exec.exec(`powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}`);
 
-    let vsTestPath = getVsTestPath();
+    const vsTestPath = getVsTestPath();
     core.debug(`VsTestPath: ${vsTestPath}`);
 
-    let args = getArguments();
+    const args = getArguments();
     core.debug(`Arguments: ${args}`);
 
     core.info(`Running tests...`);
     await exec.exec(`${vsTestPath} ${testFiles.join(' ')} ${args} /Logger:TRX`);
-  } catch (err: any) {
-    core.setFailed(err.message)
+  } catch (err: unknown) {
+    core.setFailed(err instanceof Error ? err.message : "Unknown error type")
   }
 
   // Always attempt to upload test result artifact
   try {
     await uploadArtifact();
-  } catch (err: any) {
-    core.setFailed(err.message)
+  } catch (err: unknown) {
+    core.setFailed(err instanceof Error ? err.message : "Unknown error type")
   }
 }
 

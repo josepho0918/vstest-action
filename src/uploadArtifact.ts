@@ -59,7 +59,7 @@ export async function uploadArtifact() {
 
       core.info(`Created artifact with id: ${id} (bytes: ${size}`)
     }
-  } catch (err: any) {
-    core.error(err.message)
+  } catch (err: unknown) {
+    core.error(err instanceof Error ? err.message : "Unknown error type")
   }
 }

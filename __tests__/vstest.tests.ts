@@ -3,7 +3,7 @@ import * as core from '@actions/core';
 import * as exec from '@actions/exec';
 import * as Search from '../src/search';
 import {getInputs} from '../src/input-helper';
-import {Inputs, NoFileOptions} from '../src/constants'
+import {Inputs} from '../src/constants'
 import {uploadArtifact} from '../src/uploadArtifact';
 import {getTestAssemblies} from '../src/getTestAssemblies';
 import {getArguments} from '../src/getArguments';
@@ -13,7 +13,6 @@ import {when} from 'jest-when';
 describe('vstest Action Unit Tests', ()=>{
 
     beforeEach(async() => {
-        let workerUri = "https://aka.ms/local-worker-win-x64";
         // jest.resetModules();
         // jest.resetAllMocks();
 
@@ -57,7 +56,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith('otherConsoleOptions').mockReturnValue('');
     
         // Act
-        var args = getArguments();
+        const args = getArguments();
     
         // Assert
         expect(args).not.toBeNull();
@@ -85,7 +84,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith('otherConsoleOptions').mockReturnValue('otherConsoleOptions');
     
         // Act
-        var args = getArguments();
+        const args = getArguments();
     
         // Assert
         expect(args).not.toBeNull();
@@ -104,8 +103,8 @@ describe('vstest Action Unit Tests', ()=>{
         const returnValue1 = core.getInput('searchFolder');
         const returnValue2 = core.getInput('testAssembly');
 
-        var filesToUploadValue = ["testFile.zip"];
-        var rootDirectoryValue = "C:\\Users\\Public\\";
+        const filesToUploadValue = ["testFile.zip"];
+        const rootDirectoryValue = "C:\\Users\\Public\\";
 
         const searchResults = {
             filesToUpload: filesToUploadValue,
@@ -117,7 +116,7 @@ describe('vstest Action Unit Tests', ()=>{
         when(findFilesToUploadMock).mockResolvedValue(searchResults);
 
         // Act
-        var testAssembly = await getTestAssemblies();
+        const testAssembly = await getTestAssemblies();
 
         // Assert
         expect(testAssembly).not.toBeNull()
@@ -135,8 +134,8 @@ describe('vstest Action Unit Tests', ()=>{
         const returnValue1 = core.getInput('searchFolder');
         const returnValue2 = core.getInput('testAssembly');
 
-        var filesToUploadValue = [''];
-        var rootDirectoryValue = "C:\\Users\\Public\\";
+        const filesToUploadValue = [''];
+        const rootDirectoryValue = "C:\\Users\\Public\\";
 
         const searchResults = {
             filesToUpload: filesToUploadValue,
@@ -149,7 +148,7 @@ describe('vstest Action Unit Tests', ()=>{
         const expectedResult : string[] = new Array('');
 
         // Act
-        var testAssembly = await getTestAssemblies();
+        const testAssembly = await getTestAssemblies();
 
         // Assert
         expect(testAssembly).toEqual(expectedResult)
@@ -167,8 +166,8 @@ describe('vstest Action Unit Tests', ()=>{
         const returnValue1 = core.getInput('searchFolder');
         const returnValue2 = core.getInput('testAssembly');
 
-        var filesToUploadValue = [''];
-        var rootDirectoryValue = "C:\\Users\\Public\\";
+        const filesToUploadValue = [''];
+        const rootDirectoryValue = "C:\\Users\\Public\\";
 
         const searchResults = {
             filesToUpload: filesToUploadValue,
@@ -182,7 +181,7 @@ describe('vstest Action Unit Tests', ()=>{
         const coresStFailedSpyOn = jest.spyOn(core, 'setFailed');
 
         // Act
-        var testAssembly = await getTestAssemblies();
+        const testAssembly = await getTestAssemblies();
         findFilesToUploadMock.mockRestore();
         
         // Assert
@@ -200,7 +199,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith(Inputs.RetentionDays).mockReturnValue('30');
         
         // Act
-        var results = getInputs();
+        const results = getInputs();
 
         // Assert
         expect(results).not.toBeNull();
@@ -217,7 +216,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith(Inputs.RetentionDays).mockReturnValue('xx');
         
         // Act
-        var results = getInputs();
+        const results = getInputs();
 
         // Assert
         expect(results).not.toBeNull();
@@ -234,7 +233,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith(Inputs.RetentionDays).mockReturnValue('30');
         
         // Act
-        var results = getInputs();
+        const results = getInputs();
 
         // Assert
         expect(results).not.toBeNull();
@@ -259,9 +258,9 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith(Inputs.IfNoFilesFound).mockReturnValue('warn')
         .calledWith(Inputs.RetentionDays).mockReturnValue('30')
         
-        var searchFolder = "C:\\Temp\\" as string;
+        const searchFolder = "C:\\Temp\\" as string;
 
-        var rawSearchResults = ["C:\\Temp\\Folder1","C:\\Temp\\Folder2","C:\\Temp\\Folder3"]
+        const rawSearchResults = ["C:\\Temp\\Folder1","C:\\Temp\\Folder2","C:\\Temp\\Folder3"]
         
         const globOptions : glob.GlobOptions = 
         {
@@ -274,7 +273,7 @@ describe('vstest Action Unit Tests', ()=>{
         // var y = when(globCreationResultMock).calledWith().mockReturnValue(rawSearchResults)
 
         // Act
-        var results = await Search.findFilesToUpload(searchFolder, globOptions)
+        const results = await Search.findFilesToUpload(searchFolder, globOptions)
 
         // Assert
         expect(results).not.toBeNull()
@@ -283,7 +282,7 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test findFilesToUpload with temp folder', async () => {
         // Arrange
-        var searchFolder = "C:\\Temp\\branch1\\folder1\\vstest-functional-test.csproj C:\\Temp\\branch2\\folder2\\vstest-functional-test.csproj" as string
+        const searchFolder = "C:\\Temp\\branch1\\folder1\\vstest-functional-test.csproj C:\\Temp\\branch2\\folder2\\vstest-functional-test.csproj" as string
         const globOptions : glob.GlobOptions = 
         {
             followSymbolicLinks:false,
@@ -292,7 +291,7 @@ describe('vstest Action Unit Tests', ()=>{
         }
 
         // Act
-        let result = await Search.findFilesToUpload(searchFolder)
+        const result = await Search.findFilesToUpload(searchFolder)
 
         // Assert        
         expect(result.filesToUpload).toBeNull
@@ -300,10 +299,10 @@ describe('vstest Action Unit Tests', ()=>{
     
     it('test findFilesToUpload with non-existent folder', async () => {
         // Arrange
-        var searchFolder = "" as string
+        const searchFolder = "" as string
 
         // Act
-        let result = await Search.findFilesToUpload(searchFolder)
+        const result = await Search.findFilesToUpload(searchFolder)
 
         // Assert        
         expect(result.filesToUpload).toBeNull
@@ -312,7 +311,7 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test findFilesToUpload with temp subfolder', async () => {
         // Arrange
-        var searchFolder = "C:\\Temp\\*\\*" as string
+        const searchFolder = "C:\\Temp\\*\\*" as string
         const globOptions : glob.GlobOptions = 
         {
             followSymbolicLinks:false,
@@ -321,7 +320,7 @@ describe('vstest Action Unit Tests', ()=>{
         }
 
         // Act
-        let result = await Search.findFilesToUpload(searchFolder, globOptions)
+        const result = await Search.findFilesToUpload(searchFolder, globOptions)
 
         // Assert        
         expect(result.filesToUpload).toBeNull
@@ -329,7 +328,7 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test findFilesToUpload with temp folder without glob options', async () => {
         // Arrange
-        var searchFolder = "C:\\Temp\\folder1" as string
+        const searchFolder = "C:\\Temp\\folder1" as string
         const globOptions : glob.GlobOptions = 
         {
             followSymbolicLinks:false,
@@ -338,7 +337,7 @@ describe('vstest Action Unit Tests', ()=>{
         }
 
         // Act
-        let result = await Search.findFilesToUpload(searchFolder)
+        const result = await Search.findFilesToUpload(searchFolder)
 
         // Assert        
         expect(result.filesToUpload).toBeNull
@@ -346,7 +345,7 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test findFilesToUpload with zip file', async () => {
         // Arrange
-        var searchFolder = "C:\\Temp\\testCase.zip" as string
+        const searchFolder = "C:\\Temp\\testCase.zip" as string
         const globOptions : glob.GlobOptions = 
         {
             followSymbolicLinks:false,
@@ -355,7 +354,7 @@ describe('vstest Action Unit Tests', ()=>{
         }
 
         // Act
-        let result = await Search.findFilesToUpload(searchFolder, globOptions)
+        const result = await Search.findFilesToUpload(searchFolder, globOptions)
 
         // Assert        
         expect(result.filesToUpload).toBeNull
@@ -379,7 +378,7 @@ describe('vstest Action Unit Tests', ()=>{
         .calledWith('otherConsoleOptions').mockReturnValue('');
     
         // Act
-        var args = uploadArtifact();
+        const args = uploadArtifact();
     
         // Assert
         expect(args).not.toBeNull();
@@ -397,8 +396,8 @@ describe('vstest Action Unit Tests', ()=>{
         const returnValue1 = core.getInput('searchFolder');
         const returnValue2 = core.getInput('testAssembly');
 
-        var filesToUploadValue = ["testFile.zip"];
-        var rootDirectoryValue = "C:\\Users\\Public\\";
+        const filesToUploadValue = ["testFile.zip"];
+        const rootDirectoryValue = "C:\\Users\\Public\\";
 
         const searchResults = {
             filesToUpload: filesToUploadValue,
@@ -410,7 +409,7 @@ describe('vstest Action Unit Tests', ()=>{
         when(findFilesToUploadMock).mockResolvedValue(searchResults);
 
         // Act
-        var testAssembly = await uploadArtifact();
+        const testAssembly = await uploadArtifact();
 
         // Assert
         expect(testAssembly).not.toBeNull()

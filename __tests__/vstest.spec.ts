@@ -74,10 +74,10 @@ describe('vstest Action Unit Tests', ()=>{
           }
       })
 
-      var searchFolder = "tempFolder" as string
+      const searchFolder = "tempFolder" as string
 
       // Act
-      let result = await Search.findFilesToUpload(searchFolder)
+      const result = await Search.findFilesToUpload(searchFolder)
 
       // Assert
       expect(result.filesToUpload.length).toEqual(expectFiles.length)
@@ -132,7 +132,7 @@ describe('vstest Action Unit Tests', ()=>{
           }
       })
 
-      var searchFolder = "tempFolder" as string
+      const searchFolder = "tempFolder" as string
       const globOptions : glob.GlobOptions = 
       {
           followSymbolicLinks:false,
@@ -141,7 +141,7 @@ describe('vstest Action Unit Tests', ()=>{
       }
 
       // Act
-      let result = await Search.findFilesToUpload(searchFolder)
+      const result = await Search.findFilesToUpload(searchFolder)
 
       // Assert        
       expect(result.filesToUpload.length).toEqual(expectFiles.length)
@@ -230,7 +230,7 @@ describe('vstest Action Unit Tests', ()=>{
       })
 
       const searchPatterns: string[] = ['base1/folder1/*', 'base2/folder2/*']
-      var searchFolder: string = searchPatterns.join('\n')
+      const searchFolder: string = searchPatterns.join('\n')
       const globOptions : glob.GlobOptions = 
       {
           followSymbolicLinks:false,
@@ -239,7 +239,7 @@ describe('vstest Action Unit Tests', ()=>{
       }
 
       // Act
-      let result = await Search.findFilesToUpload(searchFolder, globOptions)
+      const result = await Search.findFilesToUpload(searchFolder, globOptions)
 
       // Assert        
       expect(result.filesToUpload.length).toEqual(expectFiles.length)
@@ -297,8 +297,8 @@ describe('vstest Action Unit Tests', ()=>{
     jest.spyOn(core, 'info')
     jest.spyOn(core, 'setFailed')
 
-    var filesToUploadValue: string[] = [];
-    var rootDirectoryValue = __dirname;
+    const filesToUploadValue: string[] = [];
+    const rootDirectoryValue = __dirname;
 
     const searchResults = {
         filesToUpload: filesToUploadValue,
