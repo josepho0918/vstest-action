@@ -1340,8 +1340,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
-  babel-plugin-polyfill-corejs3@0.10.4:
-    resolution: {integrity: sha512-25J6I8NGfa5YkCDogHRID3fVCadIR8/pGl1/spvCkzb6lVn6SR3ojpx9nOn9iEBcUsjY24AmdKm5khcfKdylcg==}
+  babel-plugin-polyfill-corejs3@0.10.6:
+    resolution: {integrity: sha512-b37+KR2i/khY5sKmWNVQAnitvquQbNdWy6lJdsr0kmquCKEEUgMKK4SboVM3HtfnZilfjr4MMQ7vY58FVWDtIA==}
     peerDependencies:
       '@babel/core': ^7.4.0 || ^8.0.0-0 <8.0.0
 
@@ -1434,8 +1434,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  caniuse-lite@1.0.30001646:
-    resolution: {integrity: sha512-dRg00gudiBDDTmUhClSdv3hqRfpbOnU28IpI1T6PBTLWa+kOj0681C8uML3PifYfREuBrVjDGhL3adYpBT6spw==}
+  caniuse-lite@1.0.30001647:
+    resolution: {integrity: sha512-n83xdNiyeNcHpzWY+1aFbqCK7LuLfBricc4+alSQL2Xb6OR3XpnQAmlDG+pQcdTfiHRuLcQ96VOfrPSGiNJYSg==}
 
   chainsaw@0.1.0:
     resolution: {integrity: sha512-75kWfWt6MEKNC8xYXIdRpDehRYY/tNSgwKaJq+dbbDcxORuVrrQ+SEHoWsniVn9XPYfP4gmdWIeDk/4YNp1rNQ==}
@@ -1508,8 +1508,8 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  core-js-compat@3.37.1:
-    resolution: {integrity: sha512-9TNiImhKvQqSUkOvk/mMRZzOANTiEVC7WaBNhHcKM7x+/5E1l5NvsysR19zuDQScE8k+kfQXWRN3AtS/eOSHpg==}
+  core-js-compat@3.38.0:
+    resolution: {integrity: sha512-75LAicdLa4OJVwFxFbQR3NdnZjNgX6ILpVcVzcC4T2smerB5lELMrJQQQoWV6TiuC/vlaFqgU2tKQx9w5s0e0A==}
 
   core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
@@ -3828,9 +3828,9 @@ snapshots:
       '@babel/plugin-transform-unicode-sets-regex': 7.24.7(@babel/core@7.25.2)
       '@babel/preset-modules': 0.1.6-no-external-plugins(@babel/core@7.25.2)
       babel-plugin-polyfill-corejs2: 0.4.11(@babel/core@7.25.2)
-      babel-plugin-polyfill-corejs3: 0.10.4(@babel/core@7.25.2)
+      babel-plugin-polyfill-corejs3: 0.10.6(@babel/core@7.25.2)
       babel-plugin-polyfill-regenerator: 0.6.2(@babel/core@7.25.2)
-      core-js-compat: 3.37.1
+      core-js-compat: 3.38.0
       semver: 6.3.1
     transitivePeerDependencies:
       - supports-color
@@ -4666,11 +4666,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  babel-plugin-polyfill-corejs3@0.10.4(@babel/core@7.25.2):
+  babel-plugin-polyfill-corejs3@0.10.6(@babel/core@7.25.2):
     dependencies:
       '@babel/core': 7.25.2
       '@babel/helper-define-polyfill-provider': 0.6.2(@babel/core@7.25.2)
-      core-js-compat: 3.37.1
+      core-js-compat: 3.38.0
     transitivePeerDependencies:
       - supports-color
 
@@ -4737,7 +4737,7 @@ snapshots:
 
   browserslist@4.23.3:
     dependencies:
-      caniuse-lite: 1.0.30001646
+      caniuse-lite: 1.0.30001647
       electron-to-chromium: 1.5.4
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
@@ -4772,7 +4772,7 @@ snapshots:
 
   camelcase@6.3.0: {}
 
-  caniuse-lite@1.0.30001646: {}
+  caniuse-lite@1.0.30001647: {}
 
   chainsaw@0.1.0:
     dependencies:
@@ -4848,7 +4848,7 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  core-js-compat@3.37.1:
+  core-js-compat@3.38.0:
     dependencies:
       browserslist: 4.23.3
 
