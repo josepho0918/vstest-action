@@ -24,18 +24,15 @@ export async function run() {
     core.info(`Unzipping test tools...`);
     core.debug(`workerZipPath is ${workerZipPath}`);
 
-    const existingVsTestPath = path.join(__dirname, 'win-x64');
-    core.debug(`testPath is ${existingVsTestPath}`);
+    const vsTestPath = getVsTestPath();
+    core.debug(`VsTestPath: ${vsTestPath}`);
 
     // if the test tools already exist in the target folder do not try to overwrite them.
     await exec.exec(`
-      if (!(Test-Path -Path ${existingVsTestPath})) {
+      if (!(Test-Path -Path ${vsTestPath})) {
         powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}
       }
     `);
-
-    const vsTestPath = getVsTestPath();
-    core.debug(`VsTestPath: ${vsTestPath}`);
 
     const args = getArguments();
     core.debug(`Arguments: ${args}`);
