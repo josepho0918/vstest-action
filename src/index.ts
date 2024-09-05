@@ -18,21 +18,28 @@ export async function run() {
       core.debug(`${file}`);
     });
 
-    core.info(`Setting test tools...`);
-    const workerZipPath = path.join(__dirname, 'win-x64.zip');
-
-    core.info(`Unzipping test tools...`);
-    core.debug(`workerZipPath is ${workerZipPath}`);
-
     const vsTestPath = getVsTestPath();
     core.debug(`VsTestPath: ${vsTestPath}`);
 
+    const output = await exec.getExecOutput(`!(Test-Path -Path ${vsTestPath})`);
+    const result = output.stdout ?? '';
+
+    core.info(`output result is ${result}`);
+
+    const toolAlreadyUnarchived = result && result.toUpperCase() == 'TRUE';
+
     // if the test tools already exist in the target folder do not try to overwrite them.
-    await exec.exec(`
-      if (!(Test-Path -Path ${vsTestPath})) {
-        powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}
-      }
-    `);
+    if (toolAlreadyUnarchived) {
+      core.info(`Setting test tools...`);
+      const workerZipPath = path.join(__dirname, 'win-x64.zip');
+
+      core.info(`Unzipping test tools...`);
+      core.debug(`workerZipPath is ${workerZipPath}`);
+
+      await exec.exec(`powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}`);
+    } else {
+      core.info(`Test tool exists already skipping unarchiving it...`);
+    }
 
     const args = getArguments();
     core.debug(`Arguments: ${args}`);
@@ -44,9 +51,12 @@ export async function run() {
   }
 
   // if skip flag is set skip and return before uploading artifact.
-  const shouldSkipArtifactUpload = core.getInput('shouldSkipArtifactUpload');
+  const shouldSkipArtifactUploadStr = core.getInput('shouldSkipArtifactUpload');
+  const shouldSkipArtifactUpload = shouldSkipArtifactUploadStr && shouldSkipArtifactUploadStr.toUpperCase() === 'TRUE';
 
-  if (shouldSkipArtifactUpload && shouldSkipArtifactUpload.toUpperCase() === 'TRUE') {
+  core.info(`ShouldSkipArtifactUpload = ${shouldSkipArtifactUpload}`);
+
+  if (shouldSkipArtifactUpload) {
     return;
   }
 
