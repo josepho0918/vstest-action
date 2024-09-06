@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__tests__", "__tests__", "{6C7B2407-4824-4B65-AE51-A735E5D4849B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{40208918-C17D-4C93-8821-8375F876F64A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vstest-functional-test", "__tests__\Utilities\functional-tests\vstest-functional-test.csproj", "{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40208918-C17D-4C93-8821-8375F876F64A} = {6C7B2407-4824-4B65-AE51-A735E5D4849B}
+		{1DCABF74-6C61-4B1B-8D8A-D0609AD2F658} = {40208918-C17D-4C93-8821-8375F876F64A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A81E270-EF53-40FB-8ACE-44BD12B6E9E9}
+	EndGlobalSection
+EndGlobal

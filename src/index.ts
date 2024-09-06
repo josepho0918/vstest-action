@@ -30,8 +30,10 @@ export async function run() {
 
     // if the test tools already exist in the target folder do not try to overwrite them.
     if (toolAlreadyUnarchived) {
+      core.info(`toolAlreadyUnarchived = true`);
       core.info(`Test tool exists already skipping unarchiving it...`);
     } else {
+      core.info(`toolAlreadyUnarchived = false`);
       core.info(`Setting test tools...`);
       const workerZipPath = path.join(__dirname, 'win-x64.zip');
 
@@ -57,6 +59,7 @@ export async function run() {
   core.info(`ShouldSkipArtifactUpload = ${shouldSkipArtifactUpload}`);
 
   if (shouldSkipArtifactUpload) {
+    core.info(`Skipping uploading artifact...`);
     return;
   }
 
