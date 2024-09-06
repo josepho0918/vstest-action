@@ -25,7 +25,7 @@ describe('vstest Action Unit Tests', ()=>{
 
         jest.mock('@actions/exec');
         jest.spyOn(exec, 'exec');
-
+        jest.spyOn(exec, 'getExecOutput');
         jest.mock('path');
 
 
