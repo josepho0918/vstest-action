@@ -29,7 +29,7 @@ export async function run() {
     const toolAlreadyUnarchived = result && result.toUpperCase() == 'TRUE';
 
     // if the test tools already exist in the target folder do not try to overwrite them.
-    if (toolAlreadyUnarchived) {
+    if (!toolAlreadyUnarchived) {
       core.info(`Setting test tools...`);
       const workerZipPath = path.join(__dirname, 'win-x64.zip');
 
