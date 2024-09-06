@@ -74,6 +74,10 @@ inputs:
       Minimum 1 day.
       Maximum 90 days unless changed from the repository settings page.
 
+  shouldSkipArtifactUpload:
+    description: "Skip attempt to upload test result artifact."
+    required: false
+
 runs:
   using: "node20"
   main: "dist/index.js"
