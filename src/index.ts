@@ -21,7 +21,7 @@ export async function run() {
     const vsTestPath = getVsTestPath();
     core.debug(`VsTestPath: ${vsTestPath}`);
 
-    const output = await exec.getExecOutput(`!(Test-Path -Path ${vsTestPath})`);
+    const output = await exec.getExecOutput(`powershell !(Test-Path -Path ${vsTestPath})`);
     const result = output.stdout ?? '';
 
     core.info(`output result is ${result}`);
