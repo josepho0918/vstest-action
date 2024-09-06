@@ -1,4 +1,4 @@
-name: "vstest-action"
+name: "vs-multi-test-action"
 description: "Run VSTest and upload result logs"
 inputs:
   testAssembly:
