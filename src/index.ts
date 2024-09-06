@@ -18,26 +18,15 @@ export async function run() {
       core.debug(`${file}`);
     });
 
+    core.info(`Setting test tools...`);
+    const workerZipPath = path.join(__dirname, 'win-x64.zip');
+
+    core.info(`Unzipping test tools...`);
+    core.debug(`workerZipPath is ${workerZipPath}`);
+    await exec.exec(`powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}`);
+
     const vsTestPath = getVsTestPath();
     core.debug(`VsTestPath: ${vsTestPath}`);
-
-    const output = await exec.getExecOutput(`powershell Test-Path -Path ${vsTestPath}`);
-    const result = output.stdout ?? '';
-
-    const toolAlreadyUnarchived = result && result.toUpperCase() == 'TRUE';
-
-    // if the test tools already exist in the target folder do not try to overwrite them.
-    if (!toolAlreadyUnarchived) {
-      core.info(`Setting test tools...`);
-      const workerZipPath = path.join(__dirname, 'win-x64.zip');
-
-      core.info(`Unzipping test tools...`);
-      core.debug(`workerZipPath is ${workerZipPath}`);
-
-      await exec.exec(`powershell Expand-Archive -Path ${workerZipPath} -DestinationPath ${__dirname}`);
-    } else {
-      core.info(`Test tool exists already skipping unarchiving it...`);
-    }
 
     const args = getArguments();
     core.debug(`Arguments: ${args}`);
@@ -48,17 +37,7 @@ export async function run() {
     core.setFailed(err instanceof Error ? err.message : 'Unknown error type');
   }
 
-  // if skip flag is set skip and return before uploading artifact.
-  const shouldSkipArtifactUploadStr = core.getInput('shouldSkipArtifactUpload');
-  const shouldSkipArtifactUpload = shouldSkipArtifactUploadStr && shouldSkipArtifactUploadStr.toUpperCase() === 'TRUE';
-
-  core.info(`ShouldSkipArtifactUpload = ${shouldSkipArtifactUpload}`);
-
-  if (shouldSkipArtifactUpload) {
-    return;
-  }
-
-  // Attempt to upload test result artifact
+  // Always attempt to upload test result artifact
   try {
     await uploadArtifact();
   } catch (err: unknown) {
@@ -66,4 +45,4 @@ export async function run() {
   }
 }
 
-run()
+run();
