@@ -12,8 +12,8 @@ importers:
         specifier: ^2.1.10
         version: 2.1.10
       '@actions/core':
-        specifier: ^1.10.1
-        version: 1.10.1
+        specifier: ^1.11.0
+        version: 1.11.0
       '@actions/exec':
         specifier: ^1.1.1
         version: 1.1.1
@@ -111,8 +111,8 @@ packages:
   '@actions/artifact@2.1.10':
     resolution: {integrity: sha512-3c6DP+ZiTgHuXYaNO3W0MnoK//ZfBnJEam1SpOZuR2epNWO7m8Wh72IdhiKMib4DMyNNt8924TOUaR2X4cRPHQ==}
 
-  '@actions/core@1.10.1':
-    resolution: {integrity: sha512-3lBR9EDAY+iYIpTnTIXmWcNbX3T2kCkAEQGIQx4NVQ0575nk2k3GRZDTPQG+vVtS2izSLmINlxXf0uLtnrTP+g==}
+  '@actions/core@1.11.0':
+    resolution: {integrity: sha512-I21jQUzEjbZolw3jFZ/0iHGCb+rePCww9MaA0SbVFae4FpBTQWP1GIvr/m5Y6GVaxrDz7p3RhBtpBzwkA3rPSA==}
 
   '@actions/exec@1.1.1':
     resolution: {integrity: sha512-+sCcHHbVdk93a0XT19ECtO/gIXoxvdsgQLzb2fE2/5sIZmWQuluYyjPQtrtTHdU1YzTZ7bAPN4sITq2xi1679w==}
@@ -2890,10 +2890,6 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  uuid@8.3.2:
-    resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
-    hasBin: true
-
   v8-to-istanbul@9.3.0:
     resolution: {integrity: sha512-kiGUalWN+rgBJ/1OHZsBtU4rXZOfj/7rKQxULKlIzwzQSvMJUUNgPwJEEh7gU6xEVxC0ahoOBvN2YI8GH6FNgA==}
     engines: {node: '>=10.12.0'}
@@ -2989,7 +2985,7 @@ snapshots:
 
   '@actions/artifact@2.1.10':
     dependencies:
-      '@actions/core': 1.10.1
+      '@actions/core': 1.11.0
       '@actions/github': 5.1.1
       '@actions/http-client': 2.2.3
       '@azure/storage-blob': 12.25.0
@@ -3008,10 +3004,10 @@ snapshots:
       - supports-color
       - ts-proto
 
-  '@actions/core@1.10.1':
+  '@actions/core@1.11.0':
     dependencies:
+      '@actions/exec': 1.1.1
       '@actions/http-client': 2.2.3
-      uuid: 8.3.2
 
   '@actions/exec@1.1.1':
     dependencies:
@@ -3035,7 +3031,7 @@ snapshots:
 
   '@actions/glob@0.5.0':
     dependencies:
-      '@actions/core': 1.10.1
+      '@actions/core': 1.11.0
       minimatch: 3.1.2
 
   '@actions/http-client@2.2.3':
@@ -6388,8 +6384,6 @@ snapshots:
       punycode: 2.3.1
 
   util-deprecate@1.0.2: {}
-
-  uuid@8.3.2: {}
 
   v8-to-istanbul@9.3.0:
     dependencies:
