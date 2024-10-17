@@ -140,8 +140,8 @@ packages:
     resolution: {integrity: sha512-nBrLsEWm4J2u5LpAPjxADTlq3trDgVZZXHNKabeXZtpq3d3AbN/KGO82R87rdDz5/lYB024rtEf10/q0urNgsA==}
     engines: {node: '>=18.0.0'}
 
-  '@azure/core-auth@1.8.0':
-    resolution: {integrity: sha512-YvFMowkXzLbXNM11yZtVLhUCmuG0ex7JKOH366ipjmHBhL3vpDcPAeWF+jf0X+jVXwFqo3UhsWUq4kH0ZPdu/g==}
+  '@azure/core-auth@1.9.0':
+    resolution: {integrity: sha512-FPwHpZywuyasDSLMqJ6fhbOK3TqUdviZNF8OqRGA4W5Ewib2lEEZ+pBsYcBa88B2NGO/SEnYPGhyBqNlE8ilSw==}
     engines: {node: '>=18.0.0'}
 
   '@azure/core-client@1.9.2':
@@ -168,8 +168,8 @@ packages:
     resolution: {integrity: sha512-UKTiEJPkWcESPYJz3X5uKRYyOcJD+4nYph+KpfdPRnQJVrZfk0KJgdnaAWKfhsBBtAf/D58Az4AvCJEmWgIBAg==}
     engines: {node: '>=18.0.0'}
 
-  '@azure/core-util@1.10.0':
-    resolution: {integrity: sha512-dqLWQsh9Nro1YQU+405POVtXnwrIVqPyfUzc4zXCbThTg7+vNNaiMkwbX9AMXKyoFYFClxmB3s25ZFr3+jZkww==}
+  '@azure/core-util@1.11.0':
+    resolution: {integrity: sha512-DxOSLua+NdpWoSqULhjDyAZTXFdP/LKkqtYuxxz1SCN289zk3OG8UOpnCQAz/tygyACBtWp/BoO72ptK7msY8g==}
     engines: {node: '>=18.0.0'}
 
   '@azure/core-xml@1.4.4':
@@ -1247,8 +1247,8 @@ packages:
     peerDependencies:
       acorn: ^6.0.0 || ^7.0.0 || ^8.0.0
 
-  acorn@8.12.1:
-    resolution: {integrity: sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg==}
+  acorn@8.13.0:
+    resolution: {integrity: sha512-8zSiw54Oxrdym50NlZ9sUusyO1Z1ZchgRLWRaK6c86XJFClyCgFKetdowBg5bKxyp/u+CDBJG4Mpp0m3HLZl9w==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -1429,8 +1429,8 @@ packages:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
 
-  caniuse-lite@1.0.30001668:
-    resolution: {integrity: sha512-nWLrdxqCdblixUO+27JtGJJE/txpJlyUy5YN1u53wLZkP0emYCo5zgS6QYft7VUYR42LGgi/S5hdLZTrnyIddw==}
+  caniuse-lite@1.0.30001669:
+    resolution: {integrity: sha512-DlWzFDJqstqtIVx1zeSpIMLjunf5SmwOw0N2Ck/QSQdS8PLS4+9HrLaYei4w8BIAL7IB/UEDu889d8vhCTPA0w==}
 
   chainsaw@0.1.0:
     resolution: {integrity: sha512-75kWfWt6MEKNC8xYXIdRpDehRYY/tNSgwKaJq+dbbDcxORuVrrQ+SEHoWsniVn9XPYfP4gmdWIeDk/4YNp1rNQ==}
@@ -1574,8 +1574,8 @@ packages:
     engines: {node: '>=0.10.0'}
     hasBin: true
 
-  electron-to-chromium@1.5.37:
-    resolution: {integrity: sha512-u7000ZB/X0K78TaQqXZ5ktoR7J79B9US7IkE4zyvcILYwOGY2Tx9GRPYstn7HmuPcMxZ+BDGqIsyLpZQi9ufPw==}
+  electron-to-chromium@1.5.40:
+    resolution: {integrity: sha512-LYm78o6if4zTasnYclgQzxEcgMoIcybWOhkATWepN95uwVVWV0/IW10v+2sIeHE+bIYWipLneTftVyQm45UY7g==}
 
   emittery@0.13.1:
     resolution: {integrity: sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ==}
@@ -2349,8 +2349,8 @@ packages:
   path-to-regexp@6.3.0:
     resolution: {integrity: sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ==}
 
-  picocolors@1.1.0:
-    resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
+  picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
@@ -2636,8 +2636,8 @@ packages:
       uglify-js:
         optional: true
 
-  terser@5.34.1:
-    resolution: {integrity: sha512-FsJZ7iZLd/BXkz+4xrRTGJ26o/6VTjQytUk8b8OxkwcD2I+79VPJlz7qss1+zE7h8GNIScFqXcDyJ/KqBYZFVA==}
+  terser@5.36.0:
+    resolution: {integrity: sha512-IYV9eNMuFAV4THUspIRXkLakHnV6XO7FEdtKjf/mDyrnqUg9LnlOn6/RwRvM9SZjR4GUq8Nk8zj67FzVARr74w==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2716,8 +2716,8 @@ packages:
   ts-poet@4.15.0:
     resolution: {integrity: sha512-sLLR8yQBvHzi9d4R1F4pd+AzQxBfzOSSjfxiJxQhkUoH5bL7RsAC6wgvtVUQdGqiCsyS9rT6/8X2FI7ipdir5g==}
 
-  tslib@2.7.0:
-    resolution: {integrity: sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA==}
+  tslib@2.8.0:
+    resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
 
   tunnel@0.0.6:
     resolution: {integrity: sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==}
@@ -2964,23 +2964,23 @@ snapshots:
 
   '@azure/abort-controller@2.1.2':
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.0
 
-  '@azure/core-auth@1.8.0':
+  '@azure/core-auth@1.9.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      '@azure/core-util': 1.10.0
-      tslib: 2.7.0
+      '@azure/core-util': 1.11.0
+      tslib: 2.8.0
 
   '@azure/core-client@1.9.2':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      '@azure/core-auth': 1.8.0
+      '@azure/core-auth': 1.9.0
       '@azure/core-rest-pipeline': 1.17.0
       '@azure/core-tracing': 1.2.0
-      '@azure/core-util': 1.10.0
+      '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
-      tslib: 2.7.0
+      tslib: 2.8.0
     transitivePeerDependencies:
       - supports-color
 
@@ -2995,60 +2995,60 @@ snapshots:
   '@azure/core-lro@2.7.2':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      '@azure/core-util': 1.10.0
+      '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   '@azure/core-paging@1.6.2':
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   '@azure/core-rest-pipeline@1.17.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      '@azure/core-auth': 1.8.0
+      '@azure/core-auth': 1.9.0
       '@azure/core-tracing': 1.2.0
-      '@azure/core-util': 1.10.0
+      '@azure/core-util': 1.11.0
       '@azure/logger': 1.1.4
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5
-      tslib: 2.7.0
+      tslib: 2.8.0
     transitivePeerDependencies:
       - supports-color
 
   '@azure/core-tracing@1.2.0':
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.0
 
-  '@azure/core-util@1.10.0':
+  '@azure/core-util@1.11.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   '@azure/core-xml@1.4.4':
     dependencies:
       fast-xml-parser: 4.5.0
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   '@azure/logger@1.1.4':
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   '@azure/storage-blob@12.25.0':
     dependencies:
       '@azure/abort-controller': 2.1.2
-      '@azure/core-auth': 1.8.0
+      '@azure/core-auth': 1.9.0
       '@azure/core-client': 1.9.2
       '@azure/core-http-compat': 2.1.2
       '@azure/core-lro': 2.7.2
       '@azure/core-paging': 1.6.2
       '@azure/core-rest-pipeline': 1.17.0
       '@azure/core-tracing': 1.2.0
-      '@azure/core-util': 1.10.0
+      '@azure/core-util': 1.11.0
       '@azure/core-xml': 1.4.4
       '@azure/logger': 1.1.4
       events: 3.3.0
-      tslib: 2.7.0
+      tslib: 2.8.0
     transitivePeerDependencies:
       - supports-color
 
@@ -3069,7 +3069,7 @@ snapshots:
   '@babel/code-frame@7.25.7':
     dependencies:
       '@babel/highlight': 7.25.7
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/compat-data@7.25.8': {}
 
@@ -3236,7 +3236,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.25.7
       chalk: 2.4.2
       js-tokens: 4.0.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   '@babel/parser@7.25.8':
     dependencies:
@@ -4487,15 +4487,15 @@ snapshots:
     dependencies:
       event-target-shim: 5.0.1
 
-  acorn-import-attributes@1.9.5(acorn@8.12.1):
+  acorn-import-attributes@1.9.5(acorn@8.13.0):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
 
-  acorn-jsx@5.3.2(acorn@8.12.1):
+  acorn-jsx@5.3.2(acorn@8.13.0):
     dependencies:
-      acorn: 8.12.1
+      acorn: 8.13.0
 
-  acorn@8.12.1: {}
+  acorn@8.13.0: {}
 
   agent-base@7.1.1:
     dependencies:
@@ -4682,8 +4682,8 @@ snapshots:
 
   browserslist@4.24.0:
     dependencies:
-      caniuse-lite: 1.0.30001668
-      electron-to-chromium: 1.5.37
+      caniuse-lite: 1.0.30001669
+      electron-to-chromium: 1.5.40
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.0)
 
@@ -4711,13 +4711,13 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   camelcase@5.3.1: {}
 
   camelcase@6.3.0: {}
 
-  caniuse-lite@1.0.30001668: {}
+  caniuse-lite@1.0.30001669: {}
 
   chainsaw@0.1.0:
     dependencies:
@@ -4854,7 +4854,7 @@ snapshots:
     dependencies:
       jake: 10.9.2
 
-  electron-to-chromium@1.5.37: {}
+  electron-to-chromium@1.5.40: {}
 
   emittery@0.13.1: {}
 
@@ -4937,8 +4937,8 @@ snapshots:
 
   espree@10.2.0:
     dependencies:
-      acorn: 8.12.1
-      acorn-jsx: 5.3.2(acorn@8.12.1)
+      acorn: 8.13.0
+      acorn-jsx: 5.3.2(acorn@8.13.0)
       eslint-visitor-keys: 4.1.0
 
   esprima@4.0.1: {}
@@ -5620,7 +5620,7 @@ snapshots:
 
   lower-case@2.0.2:
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   lru-cache@10.4.3: {}
 
@@ -5693,7 +5693,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   node-bin-setup@1.1.3: {}
 
@@ -5766,7 +5766,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.7.0
+      tslib: 2.8.0
 
   path-exists@4.0.0: {}
 
@@ -5783,7 +5783,7 @@ snapshots:
 
   path-to-regexp@6.3.0: {}
 
-  picocolors@1.1.0: {}
+  picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
 
@@ -6039,13 +6039,13 @@ snapshots:
       jest-worker: 27.5.1
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
-      terser: 5.34.1
+      terser: 5.36.0
       webpack: 5.92.1
 
-  terser@5.34.1:
+  terser@5.36.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.12.1
+      acorn: 8.13.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -6115,7 +6115,7 @@ snapshots:
       lodash: 4.17.21
       prettier: 2.8.8
 
-  tslib@2.7.0: {}
+  tslib@2.8.0: {}
 
   tunnel@0.0.6: {}
 
@@ -6181,7 +6181,7 @@ snapshots:
     dependencies:
       browserslist: 4.24.0
       escalade: 3.2.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   uri-js@4.4.1:
     dependencies:
@@ -6215,8 +6215,8 @@ snapshots:
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.12.1
-      acorn-import-attributes: 1.9.5(acorn@8.12.1)
+      acorn: 8.13.0
+      acorn-import-attributes: 1.9.5(acorn@8.13.0)
       browserslist: 4.24.0
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1
