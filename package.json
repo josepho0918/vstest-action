@@ -17,7 +17,7 @@
     "@types/mock-fs": "^4.13.4",
     "fast-xml-parser": "^4.5.1",
     "node": "^23.7.0",
-    "semver": "^7.7.0",
+    "semver": "^7.7.1",
     "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
