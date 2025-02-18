@@ -36,8 +36,8 @@ importers:
         specifier: ^4.13.4
         version: 4.13.4
       fast-xml-parser:
-        specifier: ^4.5.1
-        version: 4.5.1
+        specifier: ^4.5.2
+        version: 4.5.2
       node:
         specifier: ^23.8.0
         version: 23.8.0
@@ -1692,8 +1692,8 @@ packages:
   fast-uri@3.0.6:
     resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
 
-  fast-xml-parser@4.5.1:
-    resolution: {integrity: sha512-y655CeyUQ+jj7KBbYMc4FG01V8ZQqjN+gDYGJ50RtfsUB8iG9AmwmwoAgeKLJdmueKKMrH1RJ7yXHTSoczdv5w==}
+  fast-xml-parser@4.5.2:
+    resolution: {integrity: sha512-xmnYV9o0StIz/0ArdzmWTxn9oDy0lH8Z80/8X/TD2EUQKXY4DHxoT9mYBqgGIG17DgddCJtH1M6DriMbalNsAA==}
     hasBin: true
 
   fastq@1.19.0:
@@ -3012,7 +3012,7 @@ snapshots:
 
   '@azure/core-xml@1.4.4':
     dependencies:
-      fast-xml-parser: 4.5.1
+      fast-xml-parser: 4.5.2
       tslib: 2.8.1
 
   '@azure/logger@1.1.4':
@@ -4962,7 +4962,7 @@ snapshots:
 
   fast-uri@3.0.6: {}
 
-  fast-xml-parser@4.5.1:
+  fast-xml-parser@4.5.2:
     dependencies:
       strnum: 1.0.5
 
