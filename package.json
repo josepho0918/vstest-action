@@ -26,7 +26,7 @@
     "@babel/preset-env": "^7.26.9",
     "@eslint/js": "^9.22.0",
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.9",
+    "@types/node": "^22.13.10",
     "@types/semver": "^7.5.8",
     "@vercel/ncc": "^0.38.3",
     "eslint": "^9.22.0",
