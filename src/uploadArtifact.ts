@@ -1,5 +1,5 @@
 import * as core from '@actions/core';
-import {DefaultArtifactClient, UploadArtifactOptions} from '@actions/artifact';
+import {UploadArtifactOptions} from '@actions/artifact';
 import {findFilesToUpload} from './search';
 import {getInputs} from './input-helper';
 import {NoFileOptions} from './constants';
@@ -44,6 +44,7 @@ export async function uploadArtifact() {
         )
       }
 
+      const { DefaultArtifactClient } = await import('@actions/artifact');
       const artifactClient = new DefaultArtifactClient()
       const options: UploadArtifactOptions = {}
       if (inputs.retentionDays) {
