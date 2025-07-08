@@ -37,7 +37,7 @@
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.35.1",
+    "typescript-eslint": "^8.36.0",
     "wget-improved": "^3.4.0"
   },
   "pnpm": {
