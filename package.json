@@ -16,7 +16,7 @@
     "@types/jest-when": "^3.5.5",
     "@types/mock-fs": "^4.13.4",
     "fast-xml-parser": "^5.2.5",
-    "node": "^24.3.0",
+    "node": "^24.4.0",
     "semver": "^7.7.2",
     "xmlbuilder": "^15.1.1"
   },
