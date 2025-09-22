@@ -27,7 +27,7 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: 10.17.0
+          version: 10.17.1
 
       - name: Installing node_modules
         run: pnpm install
