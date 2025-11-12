@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "ncc build src\\index.ts",
-    "test": "jest vstest.tests.ts --coverage",
+    "test": "set NODE_OPTIONS=--no-webstorage && jest vstest.tests.ts --coverage",
     "functional-test": "jest vstest.spec.ts",
     "lint": "eslint ."
   },
