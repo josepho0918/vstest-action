@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@actions/artifact':
-        specifier: ^4.0.0
-        version: 4.0.0
+        specifier: ^5.0.0
+        version: 5.0.0
       '@actions/core':
         specifier: ^2.0.1
         version: 2.0.1
@@ -105,8 +105,8 @@ importers:
 
 packages:
 
-  '@actions/artifact@4.0.0':
-    resolution: {integrity: sha512-HCc2jMJRAfviGFAh0FsOR/jNfWhirxl7W6z8zDtttt0GltwxBLdEIjLiweOPFl9WbyJRW1VWnPUSAixJqcWUMQ==}
+  '@actions/artifact@5.0.0':
+    resolution: {integrity: sha512-PboymiO3U0QEi50gVPO7omhwlJ24yYwVCq9hyWI5x7qab6PqF5mFErdp5cIGigHYswZm+vACH4i7Xc6WV8RA9w==}
 
   '@actions/core@1.11.1':
     resolution: {integrity: sha512-hXJCSrkwfA46Vd9Z3q4cpEpHB1rL5NG04+/rbqW9d3+CSvtB1tYe8UTpAlixa1vj0m/ULglfEK2UKxMGxCxv5A==}
@@ -3051,11 +3051,11 @@ packages:
 
 snapshots:
 
-  '@actions/artifact@4.0.0':
+  '@actions/artifact@5.0.0':
     dependencies:
-      '@actions/core': 1.11.1
+      '@actions/core': 2.0.1
       '@actions/github': 6.0.1
-      '@actions/http-client': 2.2.3
+      '@actions/http-client': 3.0.0
       '@azure/core-http': 3.0.5
       '@azure/storage-blob': 12.29.1
       '@octokit/core': 5.2.2
