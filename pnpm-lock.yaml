@@ -24,8 +24,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       '@actions/http-client':
-        specifier: ^3.0.0
-        version: 3.0.0
+        specifier: ^3.0.1
+        version: 3.0.1
       '@actions/io':
         specifier: ^2.0.0
         version: 2.0.0
@@ -129,8 +129,8 @@ packages:
   '@actions/http-client@2.2.3':
     resolution: {integrity: sha512-mx8hyJi/hjFvbPokCg4uRd4ZX78t+YyRPtnKWwIl+RzNaVuFpQHfmlGVfsKEJN8LwTCvL+DfVgAM04XaHkm6bA==}
 
-  '@actions/http-client@3.0.0':
-    resolution: {integrity: sha512-1s3tXAfVMSz9a4ZEBkXXRQD4QhY3+GAsWSbaYpeknPOKEeyRiU3lH+bHiLMZdo2x/fIeQ/hscL1wCkDLVM2DZQ==}
+  '@actions/http-client@3.0.1':
+    resolution: {integrity: sha512-SbGS8c/vySbNO3kjFgSW77n83C4MQx/Yoe+b1hAdpuvfHxnkHzDq2pWljUpAA56Si1Gae/7zjeZsV0CYjmLo/w==}
 
   '@actions/io@1.1.3':
     resolution: {integrity: sha512-wi9JjgKLYS7U/z8PPbco+PvTb/nRWjeoFlJ1Qer83k/3C5PHQi28hiVdeE2kHXmIL99mQFawx8qt/JPjZilJ8Q==}
@@ -2936,7 +2936,7 @@ snapshots:
     dependencies:
       '@actions/core': 2.0.1
       '@actions/github': 6.0.1
-      '@actions/http-client': 3.0.0
+      '@actions/http-client': 3.0.1
       '@azure/storage-blob': 12.29.1
       '@octokit/core': 5.2.2
       '@octokit/plugin-request-log': 1.0.4(@octokit/core@5.2.2)
@@ -2960,7 +2960,7 @@ snapshots:
   '@actions/core@2.0.1':
     dependencies:
       '@actions/exec': 2.0.0
-      '@actions/http-client': 3.0.0
+      '@actions/http-client': 3.0.1
 
   '@actions/exec@1.1.1':
     dependencies:
@@ -2990,7 +2990,7 @@ snapshots:
       tunnel: 0.0.6
       undici: 5.29.0
 
-  '@actions/http-client@3.0.0':
+  '@actions/http-client@3.0.1':
     dependencies:
       tunnel: 0.0.6
       undici: 5.29.0
