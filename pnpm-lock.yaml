@@ -24,8 +24,8 @@ importers:
         specifier: ^0.5.1
         version: 0.5.1
       '@actions/http-client':
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: ^4.0.0
+        version: 4.0.0
       '@actions/io':
         specifier: ^2.0.0
         version: 2.0.0
@@ -128,6 +128,9 @@ packages:
 
   '@actions/http-client@3.0.2':
     resolution: {integrity: sha512-JP38FYYpyqvUsz+Igqlc/JG6YO9PaKuvqjM3iGvaLqFnJ7TFmcLyy2IDrY0bI0qCQug8E9K+elv5ZNfw62ZJzA==}
+
+  '@actions/http-client@4.0.0':
+    resolution: {integrity: sha512-QuwPsgVMsD6qaPD57GLZi9sqzAZCtiJT8kVBCDpLtxhL5MydQ4gS+DrejtZZPdIYyB1e95uCK9Luyds7ybHI3g==}
 
   '@actions/io@2.0.0':
     resolution: {integrity: sha512-Jv33IN09XLO+0HS79aaODsvIRyduiF7NY/F6LYeK5oeUmrsz7aFdRphQjFoESF4jS7lMauDOttKALcpapVDIAg==}
@@ -3046,6 +3049,11 @@ snapshots:
       undici: 5.29.0
 
   '@actions/http-client@3.0.2':
+    dependencies:
+      tunnel: 0.0.6
+      undici: 6.23.0
+
+  '@actions/http-client@4.0.0':
     dependencies:
       tunnel: 0.0.6
       undici: 6.23.0
