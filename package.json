@@ -6,13 +6,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@actions/artifact": "^6.0.0",
-    "@actions/core": "^3.0.0",
-    "@actions/exec": "^3.0.0",
+    "@actions/artifact": "5.0.3",
+    "@actions/core": "2.0.3",
+    "@actions/exec": "2.0.0",
     "@actions/github": "^9.0.0",
-    "@actions/glob": "^0.6.1",
+    "@actions/glob": "0.5.1",
     "@actions/http-client": "^4.0.0",
-    "@actions/io": "^3.0.2",
+    "@actions/io": "2.0.0",
     "@types/jest-when": "^3.5.5",
     "@types/mock-fs": "^4.13.4",
     "fast-xml-parser": "^5.3.4",
