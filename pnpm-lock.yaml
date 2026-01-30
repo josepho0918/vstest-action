@@ -21,8 +21,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       '@actions/glob':
-        specifier: ^0.5.1
-        version: 0.5.1
+        specifier: ^0.6.1
+        version: 0.6.1
       '@actions/http-client':
         specifier: ^4.0.0
         version: 4.0.0
@@ -126,8 +126,8 @@ packages:
   '@actions/github@9.0.0':
     resolution: {integrity: sha512-yJ0RoswsAaKcvkmpCE4XxBRiy/whH2SdTBHWzs0gi4wkqTDhXMChjSdqBz/F4AeiDlP28rQqL33iHb+kjAMX6w==}
 
-  '@actions/glob@0.5.1':
-    resolution: {integrity: sha512-+dv/t2aKQdKp9WWSp+1yIXVJzH5Q38M0Mta26pzIbeec14EcIleMB7UU6N7sNgbEuYfyuVGpE5pOKjl6j1WXkA==}
+  '@actions/glob@0.6.1':
+    resolution: {integrity: sha512-K4+2Ac5ILcf2ySdJCha+Pop9NcKjxqCL4xL4zI50dgB2PbXgC0+AcP011xfH4Of6b4QEJJg8dyZYv7zl4byTsw==}
 
   '@actions/http-client@2.2.3':
     resolution: {integrity: sha512-mx8hyJi/hjFvbPokCg4uRd4ZX78t+YyRPtnKWwIl+RzNaVuFpQHfmlGVfsKEJN8LwTCvL+DfVgAM04XaHkm6bA==}
@@ -3056,9 +3056,9 @@ snapshots:
       '@octokit/request-error': 7.1.0
       undici: 6.23.0
 
-  '@actions/glob@0.5.1':
+  '@actions/glob@0.6.1':
     dependencies:
-      '@actions/core': 2.0.3
+      '@actions/core': 3.0.0
       minimatch: 3.1.2
 
   '@actions/http-client@2.2.3':
