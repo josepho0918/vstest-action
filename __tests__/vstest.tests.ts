@@ -1,51 +1,60 @@
-import * as glob from '@actions/glob';
-import * as core from '@actions/core';
-import * as exec from '@actions/exec';
-import * as Search from '../src/search';
-import {getInputs} from '../src/input-helper';
-import {Inputs} from '../src/constants'
-import {uploadArtifact} from '../src/uploadArtifact';
-import {getTestAssemblies} from '../src/getTestAssemblies';
-import {getArguments} from '../src/getArguments';
+import * as fs from 'node:fs';
+import {jest} from '@jest/globals';
 import {when} from 'jest-when';
+
+const coreMock = {
+  debug: jest.fn(),
+  error: jest.fn(),
+  info: jest.fn(),
+  getInput: jest.fn(),
+  setFailed: jest.fn(),
+  warning: jest.fn()
+};
+const execMock = {
+  exec: jest.fn(),
+  getExecOutput: jest.fn()
+};
+const globMock = {
+  create: jest.fn()
+};
+const searchMock = {
+  findFilesToUpload: jest.fn()
+};
+
+jest.unstable_mockModule('@actions/core', () => coreMock);
+jest.unstable_mockModule('@actions/exec', () => execMock);
+jest.unstable_mockModule('@actions/glob', () => globMock);
+jest.unstable_mockModule('../src/search', () => searchMock);
+
+const core = await import('@actions/core');
+const exec = await import('@actions/exec');
+const glob = await import('@actions/glob');
+const Search = await import('../src/search');
+const {getInputs} = await import('../src/input-helper');
+const {Inputs} = await import('../src/constants');
+const {uploadArtifact} = await import('../src/uploadArtifact');
+const {getTestAssemblies} = await import('../src/getTestAssemblies');
+const {getArguments} = await import('../src/getArguments');
 // const fs = require('fs')
 
 describe('vstest Action Unit Tests', ()=>{
 
-    beforeEach(async() => {
-        // jest.resetModules();
-        // jest.resetAllMocks();
-
-        jest.mock('@actions/core');
-        jest.spyOn(core,'debug');
-        jest.spyOn(core, 'info');
-        jest.spyOn(core, 'getInput');
-        jest.spyOn(core, 'setFailed');
-        jest.spyOn(core, 'warning');
-
-        jest.mock('@actions/exec');
-        jest.spyOn(exec, 'exec');
-        jest.spyOn(exec, 'getExecOutput');
-        jest.mock('path');
-
-
-        // jest.mock('../src/uploadArtifact');
-        
+    beforeEach(() => {
+        jest.clearAllMocks();
+        searchMock.findFilesToUpload.mockResolvedValue({
+            filesToUpload: null,
+            rootDirectory: ''
+        });
     });
     
-    afterEach(async () => {
-        jest.resetAllMocks
+    afterEach(() => {
+        jest.resetAllMocks();
     })
     
     it("test getArguments with no inputs", async () => {
 
-        jest.mock('@actions/core');
-        jest.spyOn(core,'debug');
-        jest.spyOn(core, 'info');
-        jest.spyOn(core, 'getInput');
-
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
         when(coreGetInputMock).calledWith('testFiltercriteria').mockReturnValue('')
         .calledWith('runSettingsFile').mockReturnValue('')
         .calledWith('pathToCustomTestAdapters').mockReturnValue('')
@@ -67,13 +76,8 @@ describe('vstest Action Unit Tests', ()=>{
     it("test getArguments with all expected inputs", async () => {
 
         const expectedResult = '/TestCaseFilter:testFilterCriteria /Settings:runSettingsFile /TestAdapterPath:pathToCustomTestAdapters /Parallel /InIsolation /EnableCodeCoverage /Platform:x64 otherConsoleOptions '
-        jest.mock('@actions/core');
-        jest.spyOn(core,'debug');
-        jest.spyOn(core, 'info');
-        jest.spyOn(core, 'getInput');
-
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
         when(coreGetInputMock).calledWith('testFiltercriteria').mockReturnValue('testFilterCriteria')
         .calledWith('runSettingsFile').mockReturnValue('runSettingsFile')
         .calledWith('pathToCustomTestAdapters').mockReturnValue('pathToCustomTestAdapters')
@@ -95,7 +99,7 @@ describe('vstest Action Unit Tests', ()=>{
     it("test getTestAssemblies with valid searchResults", async () => {
 
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
 
         when(coreGetInputMock).calledWith('searchFolder').mockReturnValue('folderPath\\')
         .calledWith('testAssembly').mockReturnValue('testFile.sln');
@@ -111,8 +115,7 @@ describe('vstest Action Unit Tests', ()=>{
             rootDirectory: rootDirectoryValue
         };
 
-        jest.mock('../src/search');
-        const findFilesToUploadMock = jest.spyOn(Search, 'findFilesToUpload');
+        const findFilesToUploadMock = searchMock.findFilesToUpload;
         when(findFilesToUploadMock).mockResolvedValue(searchResults);
 
         // Act
@@ -126,7 +129,7 @@ describe('vstest Action Unit Tests', ()=>{
     it("test getTestAssemblies with empty searchResults", async () => {
 
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
 
         when(coreGetInputMock).calledWith('searchFolder').mockReturnValue('folderPath\\')
         .calledWith('testAssembly').mockReturnValue('testFile.sln');
@@ -142,8 +145,7 @@ describe('vstest Action Unit Tests', ()=>{
             rootDirectory: rootDirectoryValue
         };
 
-        jest.mock('../src/search');
-        const findFilesToUploadMock = jest.spyOn(Search, 'findFilesToUpload');
+        const findFilesToUploadMock = searchMock.findFilesToUpload;
         when(findFilesToUploadMock).mockResolvedValue(searchResults);
         const expectedResult : string[] = new Array('');
 
@@ -158,7 +160,7 @@ describe('vstest Action Unit Tests', ()=>{
     it('getTestAssemblies throws exception', async () => {
 
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
 
         when(coreGetInputMock).calledWith('searchFolder').mockReturnValue('folderPath\\')
         .calledWith('testAssembly').mockReturnValue('testFile.sln');
@@ -174,11 +176,10 @@ describe('vstest Action Unit Tests', ()=>{
             rootDirectory: rootDirectoryValue
         };
 
-        jest.mock('../src/search');
-        const findFilesToUploadMock = jest.spyOn(Search, 'findFilesToUpload');
+        const findFilesToUploadMock = searchMock.findFilesToUpload;
         when(findFilesToUploadMock).mockImplementation(() => { throw new Error('Sample Error') });
 
-        const coresStFailedSpyOn = jest.spyOn(core, 'setFailed');
+        const coresStFailedSpyOn = coreMock.setFailed;
 
         // Act
         const testAssembly = await getTestAssemblies();
@@ -191,8 +192,8 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test getInputs with valid values', async () => {
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
-        const coreSetFailedMock = jest.spyOn(core, 'setFailed');
+        const coreGetInputMock = coreMock.getInput;
+        const coreSetFailedMock = coreMock.setFailed;
         when(coreGetInputMock)
         .calledWith(Inputs.Name).mockReturnValue('testFile.sln')
         .calledWith(Inputs.IfNoFilesFound).mockReturnValue('warn')
@@ -208,8 +209,8 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test getInputs with invalid RetentionDays', async () => {
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
-        const coreSetFailedMock = jest.spyOn(core, 'setFailed');
+        const coreGetInputMock = coreMock.getInput;
+        const coreSetFailedMock = coreMock.setFailed;
         when(coreGetInputMock)
         .calledWith(Inputs.Name).mockReturnValue('testFile.sln')
         .calledWith(Inputs.IfNoFilesFound).mockReturnValue('warn')
@@ -225,8 +226,8 @@ describe('vstest Action Unit Tests', ()=>{
     
     it('test getInputs with ifNoFilesFound values', async () => {
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
-        const coreSetFailedMock = jest.spyOn(core, 'setFailed');
+        const coreGetInputMock = coreMock.getInput;
+        const coreSetFailedMock = coreMock.setFailed;
         when(coreGetInputMock)
         .calledWith(Inputs.Name).mockReturnValue('testFile.sln')
         .calledWith(Inputs.IfNoFilesFound).mockReturnValue('ifNoFilesFound')
@@ -242,25 +243,7 @@ describe('vstest Action Unit Tests', ()=>{
 
     it('test findFilesToUpload with valid values', async () => {
         // Arrange
-        jest.mock('@actions/glob')
-        const coreGetInputMock = jest.spyOn(core, 'getInput')
-        const globCreateMock = jest.spyOn(glob, 'create')
-        const fs = require('fs')
-        const mocked = fs as jest.Mocked<typeof fs>
-
-        jest.spyOn(fs, 'existsSync')
-        fs.existsSync.mockReturnValue(false)
-        const fsStatSyncMock = jest.spyOn(fs, 'statSync')
-        when(fsStatSyncMock).calledWith().mockReturnValue(true)
-
-        when(coreGetInputMock)
-        .calledWith(Inputs.Name).mockReturnValue('testFile.sln')
-        .calledWith(Inputs.IfNoFilesFound).mockReturnValue('warn')
-        .calledWith(Inputs.RetentionDays).mockReturnValue('30')
-        
         const searchFolder = "C:\\Temp\\" as string;
-
-        const rawSearchResults = ["C:\\Temp\\Folder1","C:\\Temp\\Folder2","C:\\Temp\\Folder3"]
         
         const globOptions : glob.GlobOptions = 
         {
@@ -361,13 +344,10 @@ describe('vstest Action Unit Tests', ()=>{
     })
 
     it('test uploadArtifact', async () => {
-        jest.mock('@actions/core');
-        jest.spyOn(core,'debug');
-        jest.spyOn(core, 'info');
-        jest.spyOn(core, 'getInput');
+        coreMock.getInput;
 
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
         when(coreGetInputMock).calledWith('testFiltercriteria').mockReturnValue('')
         .calledWith('runSettingsFile').mockReturnValue('')
         .calledWith('pathToCustomTestAdapters').mockReturnValue('')
@@ -388,7 +368,7 @@ describe('vstest Action Unit Tests', ()=>{
     it("test uploadArtifact with valid searchResults", async () => {
 
         // Arrange
-        const coreGetInputMock = jest.spyOn(core, 'getInput');
+        const coreGetInputMock = coreMock.getInput;
 
         when(coreGetInputMock).calledWith('searchFolder').mockReturnValue('folderPath\\')
         .calledWith('testAssembly').mockReturnValue('testFile.sln');
@@ -404,8 +384,7 @@ describe('vstest Action Unit Tests', ()=>{
             rootDirectory: rootDirectoryValue
         };
 
-        jest.mock('../src/search');
-        const findFilesToUploadMock = jest.spyOn(Search, 'findFilesToUpload');
+        const findFilesToUploadMock = searchMock.findFilesToUpload;
         when(findFilesToUploadMock).mockResolvedValue(searchResults);
 
         // Act

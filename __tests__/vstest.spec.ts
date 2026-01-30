@@ -1,31 +1,37 @@
-import * as glob from '@actions/glob'
-import * as core from '@actions/core'
-import * as path from 'path'
-import * as Search from '../src/search'
-import {Inputs, NoFileOptions} from '../src/constants'
-import {uploadArtifact} from '../src/uploadArtifact'
-import {when} from 'jest-when'
+import * as path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import type * as glob from '@actions/glob'
+import { jest } from '@jest/globals'
+import { when } from 'jest-when'
 import mock from 'mock-fs'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+const coreMock = {
+  debug: jest.fn(),
+  error: jest.fn(),
+  info: jest.fn(),
+  getInput: jest.fn(),
+  setFailed: jest.fn(),
+  warning: jest.fn()
+}
+
+jest.unstable_mockModule('@actions/core', () => coreMock)
+
+const core = await import('@actions/core')
+const Search = await import('../src/search')
+const { Inputs, NoFileOptions } = await import('../src/constants')
+const { uploadArtifact } = await import('../src/uploadArtifact')
+
 
 describe('vstest Action Unit Tests', ()=>{
 
-  beforeEach(async() => {
-      jest.mock('@actions/core');
-      jest.spyOn(core,'debug');
-      jest.spyOn(core, 'info');
-      jest.spyOn(core, 'getInput');
-      jest.spyOn(core, 'setFailed');
-      jest.spyOn(core, 'warning');
-
-      const globOptions : glob.GlobOptions = 
-      {
-          followSymbolicLinks:false,
-          implicitDescendants: true,
-          omitBrokenSymbolicLinks: true
-      }        
-    })
+  beforeEach(() => {
+      jest.clearAllMocks()
+  })
   
-  afterEach(async () => {
+  afterEach(() => {
       jest.resetAllMocks()
   })
 
@@ -287,27 +293,11 @@ describe('vstest Action Unit Tests', ()=>{
         }
     })
     
-    const coreGetInputMock = jest.spyOn(core, 'getInput');
+    const coreGetInputMock = coreMock.getInput;
     when(coreGetInputMock)
     .calledWith(Inputs.Name).mockReturnValue('vstest-functional-test.csproj')
     .calledWith(Inputs.IfNoFilesFound).mockReturnValue('warn')
     .calledWith(Inputs.RetentionDays).mockReturnValue('30');
-
-    jest.spyOn(core, 'warning')
-    jest.spyOn(core, 'info')
-    jest.spyOn(core, 'setFailed')
-
-    const filesToUploadValue: string[] = [];
-    const rootDirectoryValue = __dirname;
-
-    const searchResults = {
-        filesToUpload: filesToUploadValue,
-        rootDirectory: rootDirectoryValue
-    };
-
-    jest.mock('../src/search');
-    const findFilesToUploadMock = jest.spyOn(Search, 'findFilesToUpload');
-    when(findFilesToUploadMock).mockResolvedValue(searchResults);
 
     // Act
     uploadArtifact();
