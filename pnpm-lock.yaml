@@ -39,8 +39,8 @@ importers:
         specifier: ^5.3.4
         version: 5.3.4
       node:
-        specifier: ^25.5.0
-        version: 25.5.0
+        specifier: ^25.6.0
+        version: 25.6.0
       semver:
         specifier: ^7.7.3
         version: 7.7.3
@@ -1941,11 +1941,12 @@ packages:
 
   glob@10.5.0:
     resolution: {integrity: sha512-DfXN8DfhJ7NH3Oe7cFmu3NCu1wKbkReJ8TorzSAFbSKrlNaQSKfIzqYqVY8zlbs2NLBbWpRiU52GX2PbaBVNkg==}
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Glob versions prior to v9 are no longer supported
+    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
@@ -2393,8 +2394,8 @@ packages:
   node-releases@2.0.27:
     resolution: {integrity: sha512-nmh3lCkYZ3grZvqcCH+fjmQ7X+H0OeZgP40OierEaAptX4XofMh5kwNbWh7lBduUzCcV/8kZ+NDLCwm2iorIlA==}
 
-  node@25.5.0:
-    resolution: {integrity: sha512-CTCuVpMBkVotGuUUcHlo+ViheGKTaH+Fbo8pTOfDPWabfY6o4eJPrB6A66WgrdDF+7sRS11LYZivb7MolwbUzA==}
+  node@25.6.0:
+    resolution: {integrity: sha512-7fNTDq9Yy2BEvvUi918Um+gA8aA5n1NFcfoPuNz01RevORSActe7aXNTuJtWYVVewdI0vZLho6Jlx9rO9b9btg==}
     engines: {npm: '>=5.0.0'}
     hasBin: true
 
@@ -5884,7 +5885,7 @@ snapshots:
 
   node-releases@2.0.27: {}
 
-  node@25.5.0:
+  node@25.6.0:
     dependencies:
       node-bin-setup: 1.1.4
 
