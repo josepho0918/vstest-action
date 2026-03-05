@@ -6,7 +6,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@actions/artifact": "5.0.3",
+    "@actions/artifact": "6.2.0",
     "@actions/core": "2.0.3",
     "@actions/exec": "2.0.0",
     "@actions/github": "^9.0.0",
