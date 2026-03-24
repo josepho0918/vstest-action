@@ -82,8 +82,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(@jest/globals@30.3.0)(jest@30.3.0(@types/node@24.12.0))(typescript@5.9.3)
       jest-when:
-        specifier: ^3.7.0
-        version: 3.7.0(jest@30.3.0(@types/node@24.12.0))
+        specifier: ^4.0.0
+        version: 4.0.0(jest@30.3.0(@types/node@24.12.0))
       mock-fs:
         specifier: ^5.5.0
         version: 5.5.0
@@ -2237,10 +2237,10 @@ packages:
     resolution: {integrity: sha512-PJ1d9ThtTR8aMiBWUdcownq9mDdLXsQzJayTk4kmaBRHKvwNQn+ANveuhEBUyNI2hR1TVhvQ8D5kHubbzBHR/w==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
 
-  jest-when@3.7.0:
-    resolution: {integrity: sha512-aLbiyxmtksijcrKFir7n+t+XPbqSLV01eDkRyX28WM4VgA/iSc3mG8R8O2evDtOAa6SefrJiTIt/rTqqyrwVZg==}
+  jest-when@4.0.0:
+    resolution: {integrity: sha512-Y1UrHYyJYPSZ/H1d/mYQhrF2BICZbS/IkRzt4+lsuXEZDXRGS+GCIBowfzKqG8El47lxwuI6KdSQU3wW1owpmg==}
     peerDependencies:
-      jest: '>= 25'
+      jest: '>= 27'
 
   jest-worker@27.5.1:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
@@ -5770,7 +5770,7 @@ snapshots:
       jest-util: 30.3.0
       string-length: 4.0.2
 
-  jest-when@3.7.0(jest@30.3.0(@types/node@24.12.0)):
+  jest-when@4.0.0(jest@30.3.0(@types/node@24.12.0)):
     dependencies:
       jest: 30.3.0(@types/node@24.12.0)
 
