@@ -30,7 +30,7 @@
     "@types/semver": "^7.7.1",
     "@vercel/ncc": "^0.38.4",
     "eslint": "^10.3.0",
-    "jest": "^30.3.0",
+    "jest": "^30.4.0",
     "jest-mock-extended": "^4.0.1",
     "jest-when": "^4.0.3",
     "mock-fs": "^5.5.0",
