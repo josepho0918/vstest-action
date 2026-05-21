@@ -39,8 +39,8 @@ importers:
         specifier: ^5.8.0
         version: 5.8.0
       node:
-        specifier: ^26.1.0
-        version: 26.1.0
+        specifier: ^26.2.0
+        version: 26.2.0
       semver:
         specifier: ^7.8.0
         version: 7.8.0
@@ -2464,8 +2464,8 @@ packages:
   node-releases@2.0.44:
     resolution: {integrity: sha512-5WUyunoPMsvvEhS8AxHtRzP+oA8UCkJ7YRxatWKjngndhDGLiqEVAQKWjFAiAiuL8zMRGzGSJxFnLetoa43qGQ==}
 
-  node@26.1.0:
-    resolution: {integrity: sha512-EZ69jjl0lHMHSWb30aeClcC3qu4tkXtQivVWDQ2cRfzb8YieFgtfIFSAErAidd3l2RHRbRSM/H5nV+FLqQg0+Q==}
+  node@26.2.0:
+    resolution: {integrity: sha512-OhAwCSKBDlXX42UI+lT/j2cqa7wvGHfTD8PXCHQzQRfzDst5lRurk7PqxxRzAb0ni5nF0Wi+QPNPPrqwP4uAAw==}
     engines: {npm: '>=5.0.0'}
     hasBin: true
 
@@ -6032,7 +6032,7 @@ snapshots:
 
   node-releases@2.0.44: {}
 
-  node@26.1.0:
+  node@26.2.0:
     dependencies:
       node-bin-setup: 1.1.4
 
