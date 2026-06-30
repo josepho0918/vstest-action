@@ -28,7 +28,7 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^24.13.2",
     "@types/semver": "^7.7.1",
-    "@vercel/ncc": "^0.44.0",
+    "@vercel/ncc": "^0.44.1",
     "eslint": "^10.5.0",
     "jest": "^30.4.2",
     "jest-mock-extended": "^4.0.1",
