@@ -15,7 +15,7 @@
     "@actions/io": "2.0.0",
     "@types/jest-when": "^3.5.5",
     "@types/mock-fs": "^4.13.4",
-    "fast-xml-parser": "^5.9.3",
+    "fast-xml-parser": "^5.10.0",
     "node": "^26.5.0",
     "semver": "^7.8.5",
     "xmlbuilder": "^15.1.1"
