@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "ncc build src\\index.ts",
-    "test": "set NODE_OPTIONS=--no-webstorage && jest vstest.tests.ts --coverage",
+    "test": "set NODE_OPTIONS=--no-experimental-webstorage && jest vstest.tests.ts --coverage",
     "functional-test": "jest vstest.spec.ts",
     "lint": "eslint ."
   },
@@ -16,7 +16,6 @@
     "@types/jest-when": "^3.5.5",
     "@types/mock-fs": "^4.13.4",
     "fast-xml-parser": "^5.11.1",
-    "node": "^26.8.1",
     "semver": "^7.8.5",
     "xmlbuilder": "^15.1.1"
   },
