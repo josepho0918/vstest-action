@@ -30,8 +30,8 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       '@types/jest-when':
-        specifier: ^3.5.5
-        version: 3.5.5
+        specifier: ^4.0.0
+        version: 4.0.0(jest@30.5.2(@types/node@26.6.6)(supports-color@8.1.1))
       '@types/mock-fs':
         specifier: ^4.13.4
         version: 4.13.4
@@ -1276,8 +1276,9 @@ packages:
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
 
-  '@types/jest-when@3.5.5':
-    resolution: {integrity: sha512-H9MDPIrz7NOu6IXP9OHExNN9LnJbGYAzRsGIDKxWr7Fth9vovemNV8yFbkUWLSEmuA8PREvAEvt9yK0PPLmFHA==}
+  '@types/jest-when@4.0.0':
+    resolution: {integrity: sha512-xK7VWxvawkirumP9hIzpM88+pdltdJvL1cEHM4m3vlhFARgsvJYStvd5DQiExVIg4MYoMwke+Dl35F6y2X/X8Q==}
+    deprecated: This is a stub types definition. jest-when provides its own type definitions, so you do not need this installed.
 
   '@types/jest@30.0.0':
     resolution: {integrity: sha512-XTYugzhuwqWjws0CVz8QpM36+T+Dz5mTEBKhNs/esGLnCIlGdRy+Dq78NRjd7ls7r8BC8ZRMOrKlkO1hU0JOwA==}
@@ -5093,9 +5094,11 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
 
-  '@types/jest-when@3.5.5':
+  '@types/jest-when@4.0.0(jest@30.5.2(@types/node@26.6.6)(supports-color@8.1.1))':
     dependencies:
-      '@types/jest': 30.0.0
+      jest-when: 4.0.3(jest@30.5.2(@types/node@26.6.6)(supports-color@8.1.1))
+    transitivePeerDependencies:
+      - jest
 
   '@types/jest@30.0.0':
     dependencies:
